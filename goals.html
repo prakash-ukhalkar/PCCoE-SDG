@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17 Sustainable Development Goals | SDG Campus Initiative</title>
+  <meta name="description" content="Explore the 17 United Nations Sustainable Development Goals and how our campus community contributes to each.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .goals-grid { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 1.5rem; 
+      margin-top: 2rem;
+    }
+    
+    .goal-card { 
+      background: #fff; 
+      border-radius: var(--radius-md); 
+      padding: 0; 
+      box-shadow: var(--shadow-sm); 
+      border-left: 6px solid; 
+      transition: var(--transition);
+      overflow: hidden;
+    }
+    
+    .goal-card:hover { 
+      transform: translateY(-4px); 
+      box-shadow: var(--shadow-md); 
+    }
+
+    .goal-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .goal-card:hover .goal-image img {
+      transform: scale(1.02);
+    }
+    
+    .goal-content {
+      padding: 1.5rem;
+    }
+    
+    .goal-number { 
+      display: none;
+    }
+    
+    .goal-title { 
+      display: none;
+    }
+    
+    .goal-description { 
+      font-size: 0.95rem; 
+      color: var(--color-text-light); 
+      line-height: 1.5;
+      text-align: left;
+    }
+  </style>
+</head>
+<body data-page="goals">
+  <!-- Header Template -->
+  <div id="header-template"></div>
+
+  <!-- Main Layout with Sidebar -->
+  <div class="layout-wrapper" style="display: flex; min-height: calc(100vh - 200px); margin-top: 0;">
+    <!-- Sidebar Template -->
+    <div id="sidebar-template"></div>
+
+    <!-- Main Content -->
+    <main class="main-content" style="flex: 1; padding: 2rem;">
+      
+    <!-- <section class="hero">
+      <div class="container">
+        <h1>THE 17 SUSTAINABLE DEVELOPMENT GOALS</h1>
+        <p>Set by the United Nations, the SDGs form a universal blueprint to achieve a just, inclusive, and regenerative future by 2030. Our campus activates each goal through research, projects, and community partnerships.</p>
+        <div style="margin-top: 2rem;">
+          <a href="#goals-section" class="btn">Explore Goals</a>
+          <a href="https://sdgs.un.org/goals" target="_blank" class="btn outline">UN Official Site</a>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="goals-section" style="padding: 4rem 0;">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 3rem;">
+          <h2>ALL 17 GOALS</h2>
+          <p>Official goal titles are reproduced; descriptions are concise summaries for educational use. For detailed targets visit <a href="https://sdgs.un.org/goals" target="_blank">sdgs.un.org</a>.</p>
+        </div>
+        
+        <div class="goals-grid">
+          <div id="goal1" class="goal-card" style="border-left-color: #e5243b;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-01.png" alt="SDG Goal 1: No Poverty">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">7 Targets</div>
+              <p class="goal-description">End extreme income deprivation and build social protection systems that reduce vulnerability and promote inclusive economic growth.</p>
+            </div>
+          </div>
+
+          <div id="goal2" class="goal-card" style="border-left-color: #dda63a;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-02.png" alt="SDG Goal 2: Zero Hunger">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">8 Targets</div>
+              <p class="goal-description">Ensure food security, improved nutrition, and resilient sustainable agriculture systems for all communities worldwide.</p>
+            </div>
+          </div>
+
+          <div id="goal3" class="goal-card" style="border-left-color: #4c9f38;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-03.png" alt="SDG Goal 3: Good Health and Well-being">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">13 Targets</div>
+              <p class="goal-description">Promote healthy lives and ensure equitable access to quality physical and mental healthcare services for all ages.</p>
+            </div>
+          </div>
+
+          <div id="goal4" class="goal-card" style="border-left-color: #c5192d;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-04.png" alt="SDG Goal 4: Quality Education">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">10 Targets</div>
+              <p class="goal-description">Guarantee inclusive, equitable education and lifelong learning opportunities for all learners regardless of background.</p>
+            </div>
+          </div>
+
+          <div id="goal5" class="goal-card" style="border-left-color: #ff3a21;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-05.png" alt="SDG Goal 5: Gender Equality">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">9 Targets</div>
+              <p class="goal-description">Achieve gender equality and empower all women and girls across public and private spheres of society.</p>
+            </div>
+          </div>
+
+          <div id="goal6" class="goal-card" style="border-left-color: #26bde2;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-06.png" alt="SDG Goal 6: Clean Water and Sanitation">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">8 Targets</div>
+              <p class="goal-description">Secure sustainable water management, ensure water quality and availability, and provide safely managed sanitation.</p>
+            </div>
+          </div>
+
+          <div id="goal7" class="goal-card" style="border-left-color: #fcc30b;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-07.png" alt="SDG Goal 7: Affordable and Clean Energy">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">5 Targets</div>
+              <p class="goal-description">Ensure universal access to reliable, modern, and renewable energy services while improving energy efficiency.</p>
+            </div>
+          </div>
+
+          <div id="goal8" class="goal-card" style="border-left-color: #a21942;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-08.png" alt="SDG Goal 8: Decent Work and Economic Growth">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">12 Targets</div>
+              <p class="goal-description">Foster inclusive, sustainable economic growth and productive employment opportunities with dignity for all.</p>
+            </div>
+          </div>
+
+          <div id="goal9" class="goal-card" style="border-left-color: #fd6925;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-09.png" alt="SDG Goal 9: Industry, Innovation and Infrastructure">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">8 Targets</div>
+              <p class="goal-description">Build resilient infrastructure, promote inclusive industrialization, and foster innovation for sustainable development.</p>
+            </div>
+          </div>
+
+          <div id="goal10" class="goal-card" style="border-left-color: #dd1367;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-10.png" alt="SDG Goal 10: Reduced Inequalities">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">10 Targets</div>
+              <p class="goal-description">Reduce disparities within and among countries through inclusive policies and equal opportunity access.</p>
+            </div>
+          </div>
+
+          <div id="goal11" class="goal-card" style="border-left-color: #fd9d24;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-11.png" alt="SDG Goal 11: Sustainable Cities and Communities">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">10 Targets</div>
+              <p class="goal-description">Make human settlements inclusive, safe, resilient, and resource-efficient for all residents.</p>
+            </div>
+          </div>
+
+          <div id="goal12" class="goal-card" style="border-left-color: #bf8b2e;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-12.png" alt="SDG Goal 12: Responsible Consumption and Production">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">11 Targets</div>
+              <p class="goal-description">Shift to sustainable resource use patterns, circular material flows, and minimize waste generation.</p>
+            </div>
+          </div>
+
+          <div id="goal13" class="goal-card" style="border-left-color: #3f7e44;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-13.png" alt="SDG Goal 13: Climate Action">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">5 Targets</div>
+              <p class="goal-description">Take urgent measures to mitigate climate change impacts, build resilience, and strengthen adaptation capacity.</p>
+            </div>
+          </div>
+
+          <div id="goal14" class="goal-card" style="border-left-color: #0a97d9;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-14.png" alt="SDG Goal 14: Life Below Water">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">10 Targets</div>
+              <p class="goal-description">Conserve and sustainably use oceans, seas, and marine ecosystems for present and future generations.</p>
+            </div>
+          </div>
+
+          <div id="goal15" class="goal-card" style="border-left-color: #56c02b;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-15.png" alt="SDG Goal 15: Life on Land">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">12 Targets</div>
+              <p class="goal-description">Protect, restore, and sustainably manage terrestrial ecosystems and halt biodiversity loss.</p>
+            </div>
+          </div>
+
+          <div id="goal16" class="goal-card" style="border-left-color: #00689d;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-16.png" alt="SDG Goal 16: Peace, Justice and Strong Institutions">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">12 Targets</div>
+              <p class="goal-description">Promote peaceful inclusive societies, provide access to justice, and build accountable institutions.</p>
+            </div>
+          </div>
+
+          <div id="goal17" class="goal-card" style="border-left-color: #19486a;">
+            <div class="goal-image">
+              <img src="assests/17 goals/E-WEB-Goal-17.png" alt="SDG Goal 17: Partnerships for the Goals">
+            </div>
+            <div class="goal-content">
+              
+              <div style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0.5rem;">19 Targets</div>
+              <p class="goal-description">Strengthen global and local partnerships to mobilize knowledge, expertise, finance, and technology.</p>
+            </div>
+          </div>
+          <!-- SDG 18: Digital Transformation for Sustainable Development (Unofficial) -->
+          <div id="goal18" class="goal-card" style="border-left-color: #6c63ff;">
+            <div class="goal-image" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2.5rem 0 1.5rem 0;">
+              <img src="assests/logos/E_SDG_logo_Square_Transparent_WEB.png.png" alt="UN SDG Logo" style="height: 110px; width: 110px; object-fit: contain; margin-bottom: 1.2rem;">
+              <a href="https://sdgs.un.org/goals" target="_blank" style="text-decoration: underline; color: #6c63ff; font-weight: 500; font-size: 1.1rem;">More info at UN SDG site</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--color-bg-alt); padding: 3rem 0;">
+      <div class="container text-center">
+        <h2>ENGAGE WITH THE GOALS</h2>
+        <p>Pick a goal, map your sphere of influence, and prototype an intervention — we help align it with measurable targets.</p>
+        <div style="margin-top: 2rem;">
+          <a href="initiatives.html" class="btn">Join Initiative</a>
+          <a href="initiatives.html" class="btn outline">Active Projects</a>
+        </div>
+      </div>
+    </section>
+    
+    </main>
+  </div>
+
+  <!-- Footer Template -->
+  <div id="footer-template"></div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About</h3>
+          <p>Catalyzing campus contributions to every SDG via research, innovation, and community outreach programs.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Explore Goals</h3>
+          <ul>
+            <li><a href="#goal13">Climate Action</a></li>
+            <li><a href="#goal7">Clean Energy</a></li>
+            <li><a href="#goal6">Water & Sanitation</a></li>
+            <li><a href="#goal5">Gender Equality</a></li>
+            <li><a href="#goal1">No Poverty</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Participate</h3>
+          <ul>
+            <li><a href="initiatives.html">Join Initiatives</a></li>
+            <li><a href="team.html">Meet Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Attribution</h3>
+          <p>Goal titles & official descriptions reference the UN SDG framework. Campus descriptions are educational interpretations.</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> SDG Campus Initiative • 17 Goals per United Nations</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/templates.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+  <script src="js/main.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Set active navigation based on current page
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = document.body.getAttribute('data-page');
+      if (currentPage) {
+        // Remove active class from all nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.style.color = 'rgba(255,255,255,0.9)';
+          link.style.borderBottom = 'none';
+        });
+        
+        // Add active class to current page
+        const activeLink = document.querySelector(`[data-page="${currentPage}"]`);
+        if (activeLink) {
+          activeLink.style.color = 'white';
+          activeLink.style.borderBottom = '3px solid #fcc30b';
+        }
+      }
+    });
+    
+    // Collapsible sidebar menu functionality
+    function toggleSubmenu(menuId) {
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(menuId.replace('-menu', '-icon'));
+      
+      if (menu.style.maxHeight === '0px' || !menu.style.maxHeight) {
+        // Calculate the actual height needed
+        menu.style.maxHeight = menu.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        menu.style.maxHeight = '0px';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+    
+    // Add hover effects to sidebar links
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+          this.style.background = 'rgba(255,255,255,0.2)';
+          this.style.borderLeft = '3px solid #fcc30b';
+          this.style.transform = 'translateX(5px)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+          this.style.background = 'transparent';
+          this.style.borderLeft = '3px solid transparent';
+          this.style.transform = 'translateX(0px)';
+        });
+      });
+      
+      // Add hover effects to quick action buttons
+      const quickActions = document.querySelectorAll('.sidebar a[style*="rgba(255,255,255,0.1)"]');
+      quickActions.forEach(action => {
+        action.addEventListener('mouseenter', function() {
+          this.style.background = 'rgba(255,255,255,0.2)';
+          this.style.transform = 'translateY(-2px)';
+        });
+        
+        action.addEventListener('mouseleave', function() {
+          this.style.background = 'rgba(255,255,255,0.1)';
+          this.style.transform = 'translateY(0px)';
+        });
+      });
+    });
+
+    // Function to load template content
+    function loadTemplate(templatePath, targetElementId) {
+      fetch(templatePath)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById(targetElementId).innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Error loading template:', error);
+        });
+    }
+  </script>
