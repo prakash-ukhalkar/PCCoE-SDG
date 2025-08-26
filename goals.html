@@ -9,7 +9,7 @@
   <style>
     .goals-grid { 
       display: grid; 
-      grid-template-columns: repeat(3, 1fr); 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
       gap: 1.5rem; 
       margin-top: 2rem;
     }
@@ -47,6 +47,46 @@
     .goal-number { 
       display: none;
     }
+    
+    /* Tablet Responsive */
+    @media (max-width: 1024px) {
+      .goals-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+      }
+      
+      .goal-content {
+        padding: 1.2rem;
+      }
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .goals-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .goal-content {
+        padding: 1rem;
+      }
+      
+      .goal-card {
+        border-left-width: 4px;
+      }
+    }
+    
+    /* Small Mobile */
+    @media (max-width: 480px) {
+      .goals-grid {
+        gap: 0.8rem;
+      }
+      
+      .goal-content {
+        padding: 0.8rem;
+      }
+    }
+  </style>
     
     .goal-title { 
       display: none;
@@ -302,46 +342,6 @@
     </main>
   </div>
 
-  <!-- Footer Template -->
-  <div id="footer-template"></div>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>About</h3>
-          <p>Catalyzing campus contributions to every SDG via research, innovation, and community outreach programs.</p>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Explore Goals</h3>
-          <ul>
-            <li><a href="#goal13">Climate Action</a></li>
-            <li><a href="#goal7">Clean Energy</a></li>
-            <li><a href="#goal6">Water & Sanitation</a></li>
-            <li><a href="#goal5">Gender Equality</a></li>
-            <li><a href="#goal1">No Poverty</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Participate</h3>
-          <ul>
-            <li><a href="initiatives.html">Join Initiatives</a></li>
-            <li><a href="team.html">Meet Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Attribution</h3>
-          <p>Goal titles & official descriptions reference the UN SDG framework. Campus descriptions are educational interpretations.</p>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> SDG Campus Initiative • 17 Goals per United Nations</p>
-      </div>
-    </div>
-  </footer>
 
   <script src="js/main.js" defer></script>
   <script src="js/templates.js" defer></script>

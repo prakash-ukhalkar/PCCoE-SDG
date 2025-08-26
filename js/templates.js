@@ -72,6 +72,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sidebar hamburger toggle logic (must run after sidebar is loaded)
     var sidebar = document.querySelector('.sidebar');
     var toggleBtn = document.getElementById('sidebar-toggle');
+    
+    // Create overlay element
+    var overlay = document.createElement('div');
+    overlay.className = 'sidebar-overlay';
+    document.body.appendChild(overlay);
+    
     if (sidebar && toggleBtn) {
       toggleBtn.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -81,15 +87,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }
+    
+    // Close sidebar when clicking overlay
+    if (overlay) {
+      overlay.addEventListener('click', function() {
+        if (window.innerWidth <= 900 && sidebar && sidebar.classList.contains('open')) {
+          sidebar.classList.remove('open');
+          document.body.classList.remove('sidebar-open');
+        }
+      });
+    }
+    
     // Close sidebar when clicking outside (mobile only)
     document.addEventListener('click', function(e) {
       if (window.innerWidth <= 900 && sidebar && sidebar.classList.contains('open')) {
-        if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
+        if (!sidebar.contains(e.target) && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
           sidebar.classList.remove('open');
           document.body.classList.remove('sidebar-open');
         }
       }
     });
+    
     // Hide sidebar on resize if needed
     window.addEventListener('resize', function() {
       if (window.innerWidth > 900 && sidebar) {

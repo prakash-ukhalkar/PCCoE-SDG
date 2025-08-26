@@ -37,8 +37,8 @@
           <p>Multiple ways to connect with our team</p>
         </div>
         
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-          <div style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
+        <div class="contact-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+          <div class="contact-card" style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
             <div style="width: 60px; height: 60px; background: var(--color-primary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">📍</div>
             <h3>Visit Our Office</h3>
             <p style="color: var(--color-text-light); margin: 1rem 0;">
@@ -48,6 +48,59 @@
               Maharashtra, India
             </p>
             <p><strong>Office Hours:</strong><br>Monday - Friday: 9:00 AM - 5:00 PM</p>
+          </div>
+          
+          <div class="contact-card" style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
+            <div style="width: 60px; height: 60px; background: var(--color-secondary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">📞</div>
+            <h3>Call Us</h3>
+            <p style="color: var(--color-text-light); margin: 1rem 0;">
+              Main Office<br>
+              +91 8087174347<br><br>
+              Student Inquiries<br>
+              +91 8087174348
+            </p>
+            <p><strong>Available:</strong><br>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+          </div>
+          
+          <div class="contact-card" style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
+            <div style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">✉️</div>
+            <h3>Email Us</h3>
+            <p style="color: var(--color-text-light); margin: 1rem 0;">
+              General Inquiries<br>
+              <a href="mailto:pccoeadmin@gmail.com" style="color: var(--color-secondary);">pccoeadmin@gmail.com</a><br><br>
+              Partnership & Collaboration<br>
+              <a href="mailto:partnerships@sdgcampus.edu" style="color: var(--color-secondary);">partnerships@sdgcampus.edu</a>
+            </p>
+            <p><strong>Response Time:</strong><br>Within 24 hours during business days</p>
+          </div>
+        </div>
+        
+        <style>
+          /* Contact Cards Responsive */
+          @media (max-width: 1024px) {
+            .contact-cards-grid {
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+              gap: 1.5rem !important;
+            }
+          }
+          
+          @media (max-width: 768px) {
+            .contact-cards-grid {
+              grid-template-columns: 1fr !important;
+              gap: 1.2rem !important;
+            }
+            
+            .contact-card {
+              padding: 1.5rem !important;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .contact-card {
+              padding: 1.2rem !important;
+            }
+          }
+        </style>
           </div>
           
           <div style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
@@ -166,38 +219,38 @@
             <p>Fill out the form below and we'll get back to you within 24 hours</p>
           </div>
           
-          <div style="background: white; padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+          <div style="background: white; padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);" class="contact-form-container">
             <form id="contact-form">
-              <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+              <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
                 <div>
                   <label for="first-name" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">First Name *</label>
-                  <input type="text" id="first-name" name="firstName" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem;">
+                  <input type="text" id="first-name" name="firstName" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
                 </div>
                 <div>
                   <label for="last-name" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Last Name *</label>
-                  <input type="text" id="last-name" name="lastName" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem;">
+                  <input type="text" id="last-name" name="lastName" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
                 </div>
               </div>
               
-              <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+              <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
                 <div>
                   <label for="email" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Email Address *</label>
-                  <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem;">
+                  <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
                 </div>
                 <div>
                   <label for="phone" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem;">
+                  <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
                 </div>
               </div>
               
               <div style="margin-bottom: 1.5rem;">
                 <label for="organization" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Organization/Institution</label>
-                <input type="text" id="organization" name="organization" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem;">
+                <input type="text" id="organization" name="organization" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
               </div>
               
               <div style="margin-bottom: 1.5rem;">
                 <label for="inquiry-type" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Inquiry Type *</label>
-                <select id="inquiry-type" name="inquiryType" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem;">
+                <select id="inquiry-type" name="inquiryType" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
                   <option value="">Select inquiry type...</option>
                   <option value="projects">Project Collaboration</option>
                   <option value="student">Student Programs</option>
@@ -211,12 +264,12 @@
               
               <div style="margin-bottom: 1.5rem;">
                 <label for="subject" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Subject *</label>
-                <input type="text" id="subject" name="subject" required placeholder="Brief description of your inquiry" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem;">
+                <input type="text" id="subject" name="subject" required placeholder="Brief description of your inquiry" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
               </div>
               
               <div style="margin-bottom: 1.5rem;">
                 <label for="message" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Message *</label>
-                <textarea id="message" name="message" required rows="5" placeholder="Please provide details about your inquiry, including any specific goals or questions you have..." style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; resize: vertical;"></textarea>
+                <textarea id="message" name="message" required rows="5" placeholder="Please provide details about your inquiry, including any specific goals or questions you have..." style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; resize: vertical; box-sizing: border-box;"></textarea>
               </div>
               
               <div style="margin-bottom: 2rem;">
@@ -235,6 +288,45 @@
               *This is a demo form. In production, integrate with your preferred form handling service or backend API.
             </p>
           </div>
+          
+          <style>
+            /* Form Responsive Styles */
+            .contact-form-container {
+              padding: 3rem !important;
+            }
+            
+            @media (max-width: 768px) {
+              .contact-form-container {
+                padding: 2rem !important;
+              }
+              
+              .form-row {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+              }
+              
+              input, select, textarea {
+                font-size: 16px !important; /* Prevents zoom on iOS */
+                padding: 1rem 0.8rem !important;
+              }
+              
+              button[type="submit"] {
+                padding: 1.2rem !important;
+                font-size: 1rem !important;
+              }
+            }
+            
+            @media (max-width: 480px) {
+              .contact-form-container {
+                padding: 1.5rem !important;
+                margin: 0 0.5rem;
+              }
+              
+              input, select, textarea {
+                padding: 0.9rem 0.7rem !important;
+              }
+            }
+          </style>
         </div>
       </div>
     </section>
