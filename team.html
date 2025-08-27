@@ -17,7 +17,15 @@
     <div id="sidebar-template"></div>
 
     <!-- Main Content -->
-    <main class="main-content" style="flex: 1; padding: 2rem;">
+    <main class="main-content" style="flex: 1; padding: 2rem; min-width: 0; width: 100%; overflow-x: hidden;">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb-container">
+          <a href="index.html" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">›</span>
+          <span class="breadcrumb-current">Team</span>
+        </div>
+      </nav>
 
     <!-- <section class="hero">
       <div class="container">
@@ -216,92 +224,32 @@
         <div class="areas-grid">
           <div class="area-card" style="border-left-color: #fcc30b;">
             <h3>Energy & Climate Research</h3>
-            <div style="margin: 1rem 0;">
-              <div class="team-member">
-                <strong>Prof. Olivia Turner</strong> • Renewable Energy Systems<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Energy Engineering • 12 publications</span>
-              </div>
-              <div class="team-member" style="margin-top: 1rem;">
-                <strong>Dr. William Harris</strong> • Climate Modeling<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Atmospheric Science • 18 publications</span>
-              </div>
-            </div>
-            <p style="font-size: 0.9rem;"><strong>5 faculty members</strong> • 8 PhD students</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>5 faculty members</strong> • 8 PhD students • Focus on renewable energy systems and climate modeling</p>
           </div>
           
           <div class="area-card" style="border-left-color: #26bde2;">
             <h3>Water & Environmental Systems</h3>
-            <div style="margin: 1rem 0;">
-              <div class="team-member">
-                <strong>Dr. Laura Bennett</strong> • Water Quality Engineering<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Environmental Engineering • 15 publications</span>
-              </div>
-              <div class="team-member" style="margin-top: 1rem;">
-                <strong>Prof. James Walker</strong> • Ecosystem Restoration<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Environmental Science • 22 publications</span>
-              </div>
-            </div>
-            <p style="font-size: 0.9rem;"><strong>4 faculty members</strong> • 6 PhD students</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>4 faculty members</strong> • 6 PhD students • Focus on water quality engineering and ecosystem restoration</p>
           </div>
           
           <div class="area-card" style="border-left-color: #4c9f38;">
             <h3>Social Innovation & Policy</h3>
-            <div style="margin: 1rem 0;">
-              <div class="team-member">
-                <strong>Dr. Charlotte Evans</strong> • Digital Financial Inclusion<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Economics • 11 publications</span>
-              </div>
-              <div class="team-member" style="margin-top: 1rem;">
-                <strong>Prof. Henry Clark</strong> • Public Policy<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Political Science • 14 publications</span>
-              </div>
-            </div>
-            <p style="font-size: 0.9rem;"><strong>3 faculty members</strong> • 4 PhD students</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>3 faculty members</strong> • 4 PhD students • Focus on digital financial inclusion and public policy</p>
           </div>
           
           <div class="area-card" style="border-left-color: #fd6925;">
             <h3>Technology & Innovation</h3>
-            <div style="margin: 1rem 0;">
-              <div class="team-member">
-                <strong>Dr. Ethan Scott</strong> • AI for Social Good<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Computer Science • 16 publications</span>
-              </div>
-              <div class="team-member" style="margin-top: 1rem;">
-                <strong>Prof. Grace Mitchell</strong> • IoT Systems<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Electronics Engineering • 13 publications</span>
-              </div>
-            </div>
-            <p style="font-size: 0.9rem;"><strong>4 faculty members</strong> • 7 PhD students</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>4 faculty members</strong> • 7 PhD students • Focus on AI for social good and IoT systems</p>
           </div>
           <!-- New Area Card 1 -->
           <div class="area-card" style="border-left-color: #a4002d;">
             <h3>Health & Wellbeing</h3>
-            <div style="margin: 1rem 0;">
-              <div class="team-member">
-                <strong>Dr. Sarah Johnson</strong> • Public Health<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Public Health • 10 publications</span>
-              </div>
-              <div class="team-member" style="margin-top: 1rem;">
-                <strong>Prof. David Wilson</strong> • Mental Health Initiatives<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Psychology • 15 publications</span>
-              </div>
-            </div>
-            <p style="font-size: 0.9rem;"><strong>3 faculty members</strong> • 5 PhD students</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>3 faculty members</strong> • 5 PhD students • Focus on public health and mental health initiatives</p>
           </div>
           <!-- New Area Card 2 -->
           <div class="area-card" style="border-left-color: #f6b11a;">
             <h3>Urban Development</h3>
-            <div style="margin: 1rem 0;">
-              <div class="team-member">
-                <strong>Dr. Jessica Moore</strong> • Urban Planning<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Urban Studies • 9 publications</span>
-              </div>
-              <div class="team-member" style="margin-top: 1rem;">
-                <strong>Prof. Thomas Green</strong> • Smart Cities<br>
-                <span style="font-size: 0.85rem; color: var(--color-text-light);">PhD Civil Engineering • 12 publications</span>
-              </div>
-            </div>
-            <p style="font-size: 0.9rem;"><strong>4 faculty members</strong> • 6 PhD students</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>4 faculty members</strong> • 6 PhD students • Focus on urban planning and smart cities</p>
           </div>
         </div>
       </div>
@@ -395,6 +343,9 @@
     </main>
   </div>
 
+  <!-- Go to Top Button -->
+  <button class="go-to-top" id="goToTop" title="Go to top">↑</button>
+
   <!-- Footer Template -->
   <div id="footer-template"></div>
 
@@ -415,5 +366,33 @@
     }
   </style>
   <script src="js/templates.js" defer></script>
+  <script>
+    // Go to Top Button Functionality
+    const goToTopBtn = document.getElementById('goToTop');
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        goToTopBtn.classList.add('show');
+        goToTopBtn.classList.remove('hide');
+      } else {
+        goToTopBtn.classList.add('hide');
+        goToTopBtn.classList.remove('show');
+        setTimeout(() => {
+          if (!goToTopBtn.classList.contains('show')) {
+            goToTopBtn.style.display = 'none';
+          }
+        }, 300);
+      }
+    });
+    
+    // Smooth scroll to top when clicked
+    goToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
 </html>

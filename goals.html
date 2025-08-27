@@ -20,8 +20,29 @@
       padding: 0; 
       box-shadow: var(--shadow-sm); 
       border-left: 6px solid; 
-      transition: var(--transition);
+      transition: all 0.3s ease;
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .goal-card:nth-child(1) { animation-delay: 0.1s; }
+    .goal-card:nth-child(2) { animation-delay: 0.2s; }
+    .goal-card:nth-child(3) { animation-delay: 0.3s; }
+    .goal-card:nth-child(4) { animation-delay: 0.4s; }
+    .goal-card:nth-child(5) { animation-delay: 0.5s; }
+    .goal-card:nth-child(6) { animation-delay: 0.6s; }
+    .goal-card:nth-child(7) { animation-delay: 0.7s; }
+    .goal-card:nth-child(8) { animation-delay: 0.8s; }
+    .goal-card:nth-child(9) { animation-delay: 0.9s; }
+    .goal-card:nth-child(n+10) { animation-delay: 1s; }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
     .goal-card:hover { 
@@ -110,7 +131,14 @@
     <div id="sidebar-template"></div>
 
     <!-- Main Content -->
-    <main class="main-content" style="flex: 1; padding: 2rem;">
+    <main class="main-content" style="flex: 1; padding: 2rem; min-width: 0; width: 100%; overflow-x: hidden;">
+      
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">17 SDG Goals</span>
+      </nav>
       
     <!-- <section class="hero">
       <div class="container">
@@ -342,8 +370,38 @@
     </main>
   </div>
 
+  <!-- Go to Top Button -->
+  <button class="go-to-top" id="goToTop" title="Go to top">↑</button>
 
   <script src="js/main.js" defer></script>
   <script src="js/templates.js" defer></script>
+  <script>
+    // Go to Top Button Functionality
+    const goToTopBtn = document.getElementById('goToTop');
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        goToTopBtn.classList.add('show');
+        goToTopBtn.classList.remove('hide');
+      } else {
+        goToTopBtn.classList.add('hide');
+        goToTopBtn.classList.remove('show');
+        setTimeout(() => {
+          if (!goToTopBtn.classList.contains('show')) {
+            goToTopBtn.style.display = 'none';
+          }
+        }, 300);
+      }
+    });
+    
+    // Smooth scroll to top when clicked
+    goToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
 </html>

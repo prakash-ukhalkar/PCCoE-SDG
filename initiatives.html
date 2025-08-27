@@ -17,7 +17,14 @@
     <div id="sidebar-template"></div>
 
     <!-- Main Content -->
-    <main class="main-content" style="flex: 1; padding: 2rem;">
+    <main class="main-content" style="flex: 1; padding: 2rem; min-width: 0; width: 100%; overflow-x: hidden;">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Research & Initiatives</span>
+      </nav>
 
     <!-- <section class="hero">
       <div class="container">
@@ -182,6 +189,9 @@
     </main>
   </div>
 
+  <!-- Go to Top Button -->
+  <button class="go-to-top" id="goToTop" title="Go to top">↑</button>
+
   <!-- Footer Template -->
   <div id="footer-template"></div>
     <div class="container">
@@ -246,6 +256,33 @@
           this.reset();
         });
       }
+    });
+
+    // Go to Top Button Functionality
+    const goToTopBtn = document.getElementById('goToTop');
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        goToTopBtn.classList.add('show');
+        goToTopBtn.classList.remove('hide');
+      } else {
+        goToTopBtn.classList.add('hide');
+        goToTopBtn.classList.remove('show');
+        setTimeout(() => {
+          if (!goToTopBtn.classList.contains('show')) {
+            goToTopBtn.style.display = 'none';
+          }
+        }, 300);
+      }
+    });
+    
+    // Smooth scroll to top when clicked
+    goToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   </script>
 </body>

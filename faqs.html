@@ -123,7 +123,15 @@
   <div id="header-template"></div>
   <div class="layout-wrapper" style="display: flex; min-height: calc(100vh - 200px); margin-top: 0;">
     <div id="sidebar-template"></div>
-    <main class="main-content" style="flex: 1; padding: 2rem;">
+    <main class="main-content" style="flex: 1; padding: 2rem; min-width: 0; width: 100%; overflow-x: hidden;">
+      
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">FAQs</span>
+      </nav>
+      
       <section class="faq-section">
         <div class="faq-title">Frequently Asked Questions (FAQs) on the UN SDGs</div>
         <ul class="faq-list">
@@ -155,6 +163,10 @@
       </section>
     </main>
   </div>
+
+  <!-- Go to Top Button -->
+  <button class="go-to-top" id="goToTop" title="Go to top">↑</button>
+
   <div id="footer-template"></div>
   <script src="js/main.js" defer></script>
   <script src="js/templates.js" defer></script>
@@ -166,6 +178,33 @@
           var item = q.parentElement;
           item.classList.toggle('open');
         });
+      });
+    });
+
+    // Go to Top Button Functionality
+    const goToTopBtn = document.getElementById('goToTop');
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        goToTopBtn.classList.add('show');
+        goToTopBtn.classList.remove('hide');
+      } else {
+        goToTopBtn.classList.add('hide');
+        goToTopBtn.classList.remove('show');
+        setTimeout(() => {
+          if (!goToTopBtn.classList.contains('show')) {
+            goToTopBtn.style.display = 'none';
+          }
+        }, 300);
+      }
+    });
+    
+    // Smooth scroll to top when clicked
+    goToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
   </script>

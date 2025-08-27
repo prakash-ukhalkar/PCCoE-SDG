@@ -3,9 +3,331 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | SDG Campus Initiative</title>
+  <title>Contact Us | PCCoE SDG Campus Initiative</title>
   <meta name="description" content="Get in touch with our team for partnerships, collaboration opportunities, and general inquiries about our sustainable development initiatives.">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Contact Page Specific Styles */
+    .contact-hero {
+      background: var(--color-bg-alt);
+      color: var(--color-text-dark);
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      border: 1px solid var(--color-border);
+    }
+    
+    .contact-hero h1 {
+      color: var(--color-primary-dark);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .contact-hero p {
+      font-size: 1rem;
+      color: var(--color-text);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    
+    .contact-info-section {
+      background: white;
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--color-border);
+    }
+    
+    .contact-info-section h2 {
+      color: var(--color-primary-dark);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--color-secondary);
+      transition: all 0.3s ease;
+    }
+    
+    .contact-method:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-method-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--color-secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-method-content h3 {
+      color: var(--color-primary-dark);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .contact-method-content p {
+      color: var(--color-text);
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    .contact-method-content a {
+      color: var(--color-secondary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .contact-method-content a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Modern Form Styles */
+    .contact-form-section {
+      background: white;
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--color-border);
+    }
+    
+    .contact-form-section h2 {
+      color: var(--color-primary-dark);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    
+    .form-group label {
+      display: block;
+      color: var(--color-text-dark);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      background: white;
+      color: var(--color-text);
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 0 3px rgba(38, 189, 226, 0.1);
+    }
+    
+    .form-control::placeholder {
+      color: var(--color-text-light);
+    }
+    
+    select.form-control {
+      cursor: pointer;
+    }
+    
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .form-submit {
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+      color: white;
+      border: none;
+      padding: 1.2rem 2rem;
+      border-radius: var(--radius-md);
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+      transform: translateY(0);
+    }
+    
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(38, 189, 226, 0.3);
+    }
+    
+    .form-submit:active {
+      transform: translateY(0);
+    }
+    
+    /* Quick Info Cards */
+    .quick-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    
+    .quick-info-card {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+    }
+    
+    .quick-info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .quick-info-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .quick-info-card h3 {
+      color: var(--color-primary-dark);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .quick-info-card p {
+      color: var(--color-text);
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    /* Status Message */
+    .form-status {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+    
+    .form-status.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .form-status.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .contact-grid {
+        gap: 2rem;
+      }
+      
+      .contact-info-section,
+      .contact-form-section {
+        padding: 2rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .contact-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-info-section,
+      .contact-form-section {
+        padding: 1.5rem;
+      }
+      
+      .contact-method {
+        padding: 1rem;
+      }
+      
+      .form-control {
+        font-size: 16px; /* Prevents zoom on iOS */
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .contact-hero {
+        padding: 2rem 0;
+        margin: 0 1rem 2rem;
+      }
+      
+      .contact-hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .contact-info-section,
+      .contact-form-section {
+        margin: 0 1rem;
+        padding: 1.2rem;
+      }
+      
+      .contact-method {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .contact-method-icon {
+        margin: 0 auto 1rem;
+      }
+    }
+  </style>
 </head>
 <body data-page="contact">
   <!-- Header Template -->
@@ -17,334 +339,178 @@
     <div id="sidebar-template"></div>
 
     <!-- Main Content -->
-    <main class="main-content" style="flex: 1; padding: 2rem;">
+    <main class="main-content" style="flex: 1; padding: 2rem; min-width: 0; width: 100%; overflow-x: hidden;">
 
-    <!-- <section class="hero">
-      <div class="container">
-        <h1>CONTACT US</h1>
-        <p>Ready to collaborate on sustainable development initiatives? Whether you're interested in project partnerships, student opportunities, or community engagement, we'd love to hear from you.</p>
-        <div style="margin-top: 2rem;">
-          <a href="#quick-contact" class="btn">Send Message</a>
-          <a href="#office-info" class="btn outline">Visit Us</a>
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Contact Us</span>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="contact-hero">
+        <div class="container">
+          <h1>Get In Touch</h1>
+          <p>Ready to collaborate on sustainable development initiatives? We'd love to hear from you and explore how we can work together towards achieving the UN Sustainable Development Goals.</p>
         </div>
-      </div>
-    </section> -->
+      </section>
 
-    <section id="office-info" style="padding: 4rem 0;">
-      <div class="container">
-        <div class="text-center" style="margin-bottom: 3rem;">
-          <h2>GET IN TOUCH</h2>
-          <p>Multiple ways to connect with our team</p>
+      <!-- Quick Info Cards -->
+      <section class="quick-info-grid">
+        <div class="quick-info-card">
+          <div class="quick-info-icon">📍</div>
+          <h3>Visit Our Campus</h3>
+          <p><strong>Pimpri Chinchwad College of Engineering</strong><br>
+          Sector 26, Pradhikaran, Nigdi<br>
+          Pune, Maharashtra 411044</p>
         </div>
         
-        <div class="contact-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-          <div class="contact-card" style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--color-primary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">📍</div>
-            <h3>Visit Our Office</h3>
-            <p style="color: var(--color-text-light); margin: 1rem 0;">
-              SDG Campus Initiative<br>
-              Room 301, Innovation Building<br>
-              University Campus, Pune - 411001<br>
-              Maharashtra, India
-            </p>
-            <p><strong>Office Hours:</strong><br>Monday - Friday: 9:00 AM - 5:00 PM</p>
-          </div>
-          
-          <div class="contact-card" style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--color-secondary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">📞</div>
-            <h3>Call Us</h3>
-            <p style="color: var(--color-text-light); margin: 1rem 0;">
-              Main Office<br>
-              +91 8087174347<br><br>
-              Student Inquiries<br>
-              +91 8087174348
-            </p>
-            <p><strong>Available:</strong><br>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
-          </div>
-          
-          <div class="contact-card" style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">✉️</div>
-            <h3>Email Us</h3>
-            <p style="color: var(--color-text-light); margin: 1rem 0;">
-              General Inquiries<br>
-              <a href="mailto:pccoeadmin@gmail.com" style="color: var(--color-secondary);">pccoeadmin@gmail.com</a><br><br>
-              Partnership & Collaboration<br>
-              <a href="mailto:partnerships@sdgcampus.edu" style="color: var(--color-secondary);">partnerships@sdgcampus.edu</a>
-            </p>
-            <p><strong>Response Time:</strong><br>Within 24 hours during business days</p>
-          </div>
+        <div class="quick-info-card">
+          <div class="quick-info-icon">📞</div>
+          <h3>Call Us</h3>
+          <p><strong>Main Office:</strong> +91 8087174347<br>
+          <strong>Student Desk:</strong> +91 8087174348<br>
+          <strong>Hours:</strong> Mon-Fri 9AM-6PM</p>
         </div>
         
-        <style>
-          /* Contact Cards Responsive */
-          @media (max-width: 1024px) {
-            .contact-cards-grid {
-              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-              gap: 1.5rem !important;
-            }
-          }
-          
-          @media (max-width: 768px) {
-            .contact-cards-grid {
-              grid-template-columns: 1fr !important;
-              gap: 1.2rem !important;
-            }
-            
-            .contact-card {
-              padding: 1.5rem !important;
-            }
-          }
-          
-          @media (max-width: 480px) {
-            .contact-card {
-              padding: 1.2rem !important;
-            }
-          }
-        </style>
-          </div>
-          
-          <div style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--color-secondary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">📞</div>
-            <h3>Call or Email</h3>
-            <p style="color: var(--color-text-light); margin: 1rem 0;">
-              <strong>General Inquiries:</strong><br>
-              +91 20 2567 8901<br>
-              info@sdgcampus.edu.in
-            </p>
-            <p style="color: var(--color-text-light);">
-              <strong>Project Partnerships:</strong><br>
-              +91 20 2567 8902<br>
-              projects@sdgcampus.edu.in
-            </p>
-          </div>
-          
-          <div style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">🌐</div>
-            <h3>Social Media</h3>
-            <p style="color: var(--color-text-light); margin: 1rem 0;">Follow our latest updates and initiatives</p>
-            <div style="margin-top: 1rem;">
-              <a href="#" style="color: var(--color-secondary); margin-right: 1rem;">Twitter</a>
-              <a href="#" style="color: var(--color-secondary); margin-right: 1rem;">LinkedIn</a>
-              <a href="#" style="color: var(--color-secondary);">Facebook</a>
-            </div>
-            <p style="margin-top: 1rem;"><strong>Newsletter:</strong><br>
-            <a href="#" style="color: var(--color-secondary);">Subscribe for updates</a></p>
-          </div>
+        <div class="quick-info-card">
+          <div class="quick-info-icon">✉️</div>
+          <h3>Email Us</h3>
+          <p><strong>General:</strong> pccoeadmin@gmail.com<br>
+          <strong>SDG Projects:</strong> sdg@pccoe.edu.in<br>
+          <strong>Response:</strong> Within 24 hours</p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section style="background: var(--color-bg-alt); padding: 4rem 0;">
-      <div class="container">
-        <div class="text-center" style="margin-bottom: 3rem;">
-          <h2>DEPARTMENT CONTACTS</h2>
-          <p>Reach out to specific teams based on your inquiry</p>
-        </div>
-        
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-          <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-            <h3 style="color: var(--color-primary-dark); margin-bottom: 1rem;">Project Collaboration</h3>
-            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1rem;">For academic partnerships, joint development projects, and collaboration opportunities.</p>
-            <div style="font-size: 0.9rem;">
-              <strong>Dr. Emily Carter</strong><br>
-              Associate Director, Programs<br>
-              <a href="mailto:e.carter@sdgcampus.edu" style="color: var(--color-secondary);">e.carter@sdgcampus.edu</a><br>
-              +1 212 555 0103
+      <!-- Main Contact Grid -->
+      <section class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info-section">
+          <h2>Contact Information</h2>
+          
+          <div class="contact-method">
+            <div class="contact-method-icon">🏢</div>
+            <div class="contact-method-content">
+              <h3>Campus Address</h3>
+              <p>Pimpri Chinchwad College of Engineering<br>
+              Sector 26, Pradhikaran, Nigdi<br>
+              Pune, Maharashtra 411044, India</p>
             </div>
           </div>
           
-          <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-            <h3 style="color: var(--color-primary-dark); margin-bottom: 1rem;">Student Programs</h3>
-            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1rem;">For student applications, internships, and project opportunities.</p>
-            <div style="font-size: 0.9rem;">
-              <strong>Dr. James Smith</strong><br>
-              Head of Student Programs<br>
-              <a href="mailto:j.smith@sdgcampus.edu" style="color: var(--color-secondary);">j.smith@sdgcampus.edu</a><br>
-              +1 212 555 0104
+          <div class="contact-method">
+            <div class="contact-method-icon">📱</div>
+            <div class="contact-method-content">
+              <h3>Phone Numbers</h3>
+              <p><strong>Main Office:</strong> +91 8087174347<br>
+              <strong>Student Inquiries:</strong> +91 8087174348<br>
+              <strong>SDG Coordinator:</strong> +91 9822288409</p>
             </div>
           </div>
           
-          <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-            <h3 style="color: var(--color-primary-dark); margin-bottom: 1rem;">Community Engagement</h3>
-            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1rem;">For NGO partnerships, community projects, and outreach initiatives.</p>
-            <div style="font-size: 0.9rem;">
-              <strong>Ms. Olivia Brown</strong><br>
-              Community Outreach Coordinator<br>
-              <a href="mailto:o.brown@sdgcampus.edu" style="color: var(--color-secondary);">o.brown@sdgcampus.edu</a><br>
-              +1 212 555 0105
+          <div class="contact-method">
+            <div class="contact-method-icon">📧</div>
+            <div class="contact-method-content">
+              <h3>Email Addresses</h3>
+              <p><strong>General:</strong> <a href="mailto:pccoeadmin@gmail.com">pccoeadmin@gmail.com</a><br>
+              <strong>SDG Projects:</strong> <a href="mailto:sdg@pccoe.edu.in">sdg@pccoe.edu.in</a><br>
+              <strong>Partnerships:</strong> <a href="mailto:partnerships@pccoe.edu.in">partnerships@pccoe.edu.in</a></p>
             </div>
           </div>
           
-          <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-            <h3 style="color: var(--color-primary-dark); margin-bottom: 1rem;">Industry Partnerships</h3>
-            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1rem;">For corporate collaborations, funding opportunities, and technology partnerships.</p>
-            <div style="font-size: 0.9rem;">
-              <strong>Prof. William Johnson</strong><br>
-              Industry Relations Head<br>
-              <a href="mailto:w.johnson@sdgcampus.edu" style="color: var(--color-secondary);">w.johnson@sdgcampus.edu</a><br>
-              +1 212 555 0106
-            </div>
-          </div>
-          
-          <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-            <h3 style="color: var(--color-primary-dark); margin-bottom: 1rem;">Media & Communications</h3>
-            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1rem;">For media inquiries, press releases, and communication requests.</p>
-            <div style="font-size: 0.9rem;">
-              <strong>Ms. Charlotte Wilson</strong><br>
-              Communications Manager<br>
-              <a href="mailto:c.wilson@sdgcampus.edu" style="color: var(--color-secondary);">c.wilson@sdgcampus.edu</a><br>
-              +1 212 555 0107
-            </div>
-          </div>
-          
-          <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-            <h3 style="color: var(--color-primary-dark); margin-bottom: 1rem;">Director's Office</h3>
-            <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1rem;">For strategic partnerships, high-level collaborations, and institutional matters.</p>
-            <div style="font-size: 0.9rem;">
-              <strong>Dr. Richard Evans</strong><br>
-              Director & Principal Investigator<br>
-              <a href="mailto:director@sdgcampus.edu" style="color: var(--color-secondary);">director@sdgcampus.edu</a><br>
-              +1 212 555 0101
+          <div class="contact-method">
+            <div class="contact-method-icon">⏰</div>
+            <div class="contact-method-content">
+              <h3>Office Hours</h3>
+              <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM<br>
+              <strong>Saturday:</strong> 9:00 AM - 1:00 PM<br>
+              <strong>Sunday:</strong> Closed</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="quick-contact" style="padding: 4rem 0;">
-      <div class="container">
-        <div style="max-width: 800px; margin: 0 auto;">
-          <div class="text-center" style="margin-bottom: 3rem;">
-            <h2>SEND US A MESSAGE</h2>
-            <p>Fill out the form below and we'll get back to you within 24 hours</p>
-          </div>
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+          <h2>Send us a Message</h2>
           
-          <div style="background: white; padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);" class="contact-form-container">
-            <form id="contact-form">
-              <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-                <div>
-                  <label for="first-name" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">First Name *</label>
-                  <input type="text" id="first-name" name="firstName" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
-                </div>
-                <div>
-                  <label for="last-name" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Last Name *</label>
-                  <input type="text" id="last-name" name="lastName" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
-                </div>
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" class="form-control" required>
               </div>
-              
-              <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-                <div>
-                  <label for="email" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Email Address *</label>
-                  <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
-                </div>
-                <div>
-                  <label for="phone" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
-                </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" required>
               </div>
-              
-              <div style="margin-bottom: 1.5rem;">
-                <label for="organization" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Organization/Institution</label>
-                <input type="text" id="organization" name="organization" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
-              </div>
-              
-              <div style="margin-bottom: 1.5rem;">
-                <label for="inquiry-type" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Inquiry Type *</label>
-                <select id="inquiry-type" name="inquiryType" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
-                  <option value="">Select inquiry type...</option>
-                  <option value="projects">Project Collaboration</option>
-                  <option value="student">Student Programs</option>
-                  <option value="partnership">Partnership Opportunities</option>
-                  <option value="community">Community Engagement</option>
-                  <option value="media">Media Inquiry</option>
-                  <option value="general">General Information</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              
-              <div style="margin-bottom: 1.5rem;">
-                <label for="subject" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Subject *</label>
-                <input type="text" id="subject" name="subject" required placeholder="Brief description of your inquiry" style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; box-sizing: border-box;">
-              </div>
-              
-              <div style="margin-bottom: 1.5rem;">
-                <label for="message" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Message *</label>
-                <textarea id="message" name="message" required rows="5" placeholder="Please provide details about your inquiry, including any specific goals or questions you have..." style="width: 100%; padding: 0.8rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; resize: vertical; box-sizing: border-box;"></textarea>
-              </div>
-              
-              <div style="margin-bottom: 2rem;">
-                <label style="display: flex; align-items: flex-start; cursor: pointer;">
-                  <input type="checkbox" id="newsletter" name="newsletter" style="margin-right: 0.5rem; margin-top: 0.2rem;">
-                  <span style="font-size: 0.9rem;">I would like to receive updates about SDG Campus Initiative activities and projects (optional)</span>
-                </label>
-              </div>
-              
-              <button type="submit" class="btn" style="width: 100%; justify-content: center; padding: 1rem; font-size: 1.1rem;">Send Message</button>
-            </form>
+            </div>
             
-            <div id="form-status" style="margin-top: 1rem; text-align: center; display: none;"></div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control">
+              </div>
+            </div>
             
-            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-top: 2rem; text-align: center;">
-              *This is a demo form. In production, integrate with your preferred form handling service or backend API.
-            </p>
-          </div>
-          
-          <style>
-            /* Form Responsive Styles */
-            .contact-form-container {
-              padding: 3rem !important;
-            }
+            <div class="form-group">
+              <label for="organization">Organization/Institution</label>
+              <input type="text" id="organization" name="organization" class="form-control" placeholder="Your company, university, or organization">
+            </div>
             
-            @media (max-width: 768px) {
-              .contact-form-container {
-                padding: 2rem !important;
-              }
-              
-              .form-row {
-                grid-template-columns: 1fr !important;
-                gap: 1rem !important;
-              }
-              
-              input, select, textarea {
-                font-size: 16px !important; /* Prevents zoom on iOS */
-                padding: 1rem 0.8rem !important;
-              }
-              
-              button[type="submit"] {
-                padding: 1.2rem !important;
-                font-size: 1rem !important;
-              }
-            }
+            <div class="form-group">
+              <label for="inquiryType">Inquiry Type *</label>
+              <select id="inquiryType" name="inquiryType" class="form-control" required>
+                <option value="">Select inquiry type...</option>
+                <option value="partnership">Partnership Opportunities</option>
+                <option value="student">Student Programs & Internships</option>
+                <option value="research">Research Collaboration</option>
+                <option value="community">Community Engagement</option>
+                <option value="media">Media & Press Inquiries</option>
+                <option value="general">General Information</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
             
-            @media (max-width: 480px) {
-              .contact-form-container {
-                padding: 1.5rem !important;
-                margin: 0 0.5rem;
-              }
-              
-              input, select, textarea {
-                padding: 0.9rem 0.7rem !important;
-              }
-            }
-          </style>
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <input type="text" id="subject" name="subject" class="form-control" placeholder="Brief description of your inquiry" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Please provide details about your inquiry, including any specific goals or questions..." required></textarea>
+            </div>
+            
+            <button type="submit" class="form-submit">Send Message</button>
+            
+            <div id="form-status" class="form-status"></div>
+          </form>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section style="background: var(--color-primary-dark); color: white; padding: 3rem 0;">
-      <div class="container">
-        <div class="text-center">
-          <h2 style="color: white; margin-bottom: 1rem;">READY TO MAKE A DIFFERENCE?</h2>
-          <p style="margin-bottom: 2rem; opacity: 0.9;">Join our global community of faculty, students, and organizations working towards a sustainable future.</p>
-          <div>
-            <a href="team.html#join" class="btn" style="background: white; color: var(--color-primary-dark); margin-right: 1rem;">Join Our Team</a>
-            <a href="initiatives.html#join" class="btn outline" style="border-color: white; color: white;">Propose Initiative</a>
+      </section>
+
+      <!-- Call to Action Section -->
+      <section style="background: var(--color-bg-alt); color: var(--color-text); padding: 2.5rem 0; border-radius: var(--radius-md); margin-top: 2rem; border: 1px solid var(--color-border);">
+        <div class="container text-center">
+          <h2 style="color: var(--color-primary-dark); margin-bottom: 1rem; font-size: 1.5rem;">Ready to Make a Difference?</h2>
+          <p style="margin-bottom: 1.5rem; color: var(--color-text); font-size: 1rem; max-width: 500px; margin-left: auto; margin-right: auto;">Join our community working towards sustainable development goals.</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="team.html" class="btn" style="padding: 0.8rem 1.5rem;">Join Our Team</a>
+            <a href="initiatives.html" class="btn outline" style="padding: 0.8rem 1.5rem;">View Initiatives</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </main>
   </div>
+
+  <!-- Go to Top Button -->
+  <button class="go-to-top" id="goToTop" title="Go to top">↑</button>
 
   <!-- Footer Template -->
   <div id="footer-template"></div>
@@ -354,21 +520,94 @@
   
   <script src="js/templates.js" defer></script>
   <script>
-    // Form handling
+    // Enhanced form handling with better UX
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
       
       const formStatus = document.getElementById('form-status');
-      formStatus.style.display = 'block';
-      formStatus.innerHTML = '<div style="padding: 1rem; background: #4c9f38; color: white; border-radius: var(--radius-sm);">Thank you for your message! We will get back to you within 24 hours.</div>';
+      const submitButton = document.querySelector('.form-submit');
       
-      // Reset form
-      this.reset();
+      // Show loading state
+      submitButton.textContent = 'Sending...';
+      submitButton.disabled = true;
       
-      // Hide status message after 5 seconds
+      // Simulate form submission (replace with actual API call)
       setTimeout(() => {
-        formStatus.style.display = 'none';
-      }, 5000);
+        formStatus.className = 'form-status success';
+        formStatus.style.display = 'block';
+        formStatus.innerHTML = '✅ Thank you for your message! We will get back to you within 24 hours.';
+        
+        // Reset form
+        this.reset();
+        
+        // Reset button
+        submitButton.textContent = 'Send Message';
+        submitButton.disabled = false;
+        
+        // Hide status message after 5 seconds
+        setTimeout(() => {
+          formStatus.style.display = 'none';
+        }, 5000);
+      }, 1500);
+    });
+
+    // Form validation feedback
+    const formControls = document.querySelectorAll('.form-control');
+    formControls.forEach(control => {
+      control.addEventListener('blur', function() {
+        if (this.hasAttribute('required') && !this.value.trim()) {
+          this.style.borderColor = '#dc3545';
+        } else {
+          this.style.borderColor = 'var(--color-border)';
+        }
+      });
+      
+      control.addEventListener('input', function() {
+        if (this.style.borderColor === 'rgb(220, 53, 69)') {
+          this.style.borderColor = 'var(--color-border)';
+        }
+      });
+    });
+
+    // Go to Top Button Functionality
+    const goToTopBtn = document.getElementById('goToTop');
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        goToTopBtn.classList.add('show');
+        goToTopBtn.classList.remove('hide');
+      } else {
+        goToTopBtn.classList.add('hide');
+        goToTopBtn.classList.remove('show');
+        setTimeout(() => {
+          if (!goToTopBtn.classList.contains('show')) {
+            goToTopBtn.style.display = 'none';
+          }
+        }, 300);
+      }
+    });
+    
+    // Smooth scroll to top when clicked
+    goToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Add smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
     });
   </script>
 </body>
